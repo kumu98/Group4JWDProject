@@ -7,91 +7,117 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+<link href="css/styles.css" rel="stylesheet">
     <title>Group 4 Task Planner</title>
   </head>
   <body>
     
-<h1 class="text-center">Task Form</h1>
 
-    <form>
-      <div class="form-group row">
-        <label for="task" class="col-sm-2 col-form-label">Task Name</label>
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="task">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="duedate" class="col-sm-2 col-form-label">Due Date</label>
-        <div class="col-sm-2">
-          <input type="date" class="form-control" id="duedate">
-        </div>
-      </div>
-      <fieldset class="form-group">
-        <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Status</legend>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-              <label class="form-check-label" for="gridRadios1">
-                To-Do
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                In-Progress
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-              <label class="form-check-label" for="gridRadios3">
-                Review
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-              <label class="form-check-label" for="gridRadios3">
-                Completed
-              </label>
-            </div>
+    <div id="header">
+      <h1 class="text-center">Group 4 Task Planner</h1>
+  </div>
+
+  <div class="row">
+      <div class="side">
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Create Task
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Add New Task</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group row">
+          <label for="task" class="col-sm-3 col-form-label">Task Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="task">
           </div>
         </div>
-      </fieldset>
-      <div class="form-group row">
-        <label for="assign" class="col-sm-2 col-form-label">Assigned To</label>
-        <div class="col-sm-2">
-          <input type="text" class="form-control" id="assign">
+        <div class="form-group row">
+          <label for="duedate" class="col-sm-3 col-form-label">Due Date</label>
+          <div class="col-sm-5">
+            <input type="date" class="form-control" id="duedate">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="description">Description:</label>
-        <textarea id="description" name="notes" rows="5" cols="6">
-        </textarea>
-      </div>
-           
-      <div class="form-group row">
-        <div class="col-sm-10">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="submit" class="btn btn-primary">Cancel</button>
+        <fieldset class="form-group">
+          <div class="row">
+            <legend class="col-form-label col-sm-3 pt-0">Status</legend>
+            <div class="col-sm-5">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  To-Do
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  In-Progress
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                <label class="form-check-label" for="gridRadios3">
+                  Review
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                <label class="form-check-label" for="gridRadios3">
+                  Completed
+                </label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group row">
+          <label for="assign" class="col-sm-3 col-form-label">Assigned To</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="assign">
+          </div>
         </div>
+        <div class="form-group row">
+          <label for="description" class="col-sm-3">Description:</label>
+          <textarea id="description" name="notes" rows="5" cols="6">
+          </textarea>
+        </div>
+     
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+    </div>
+  </div>
+</div>
+</div>                          
       </div>
-    </form>
 
+      <div class="main">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto doloremque veritatis eum modi, consequuntur provident et labore omnis asperiores, quidem, minima distinctio illo cumque adipisci repellat aliquid quasi dignissimos qui.</p>
+            <a href="#" class="card-link">Edit</a>
+            <a href="#" class="card-link">Delete</a>
+          </div>
+        </div>
 
-   
+      </div>
+      
+    </div>
 
-
-
-
-
+    <footer>
+      <span class='tagline'>copyright group4.com</span>
+    </footer>
     
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-   
-  </body>
+</body>
 </html>
