@@ -1,0 +1,14 @@
+
+h1 {
+    text-align: center;
+    margin: 15px;
+}
+div.col-4.col-md-2 {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    column-gap: normal;
+}
+div.header {
+    margin: 40px auto;
+}
