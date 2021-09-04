@@ -14,24 +14,79 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+
+  <!-- Logo & Heading starts here -->
+  <header>
+    <img src="./images/logo.png" alt="logo"/>
+    <h1 class="display-2">Task Planner</h1>
+  </header>
+  <!-- Logo & Heading ends here  -->
+
+
+  <!-- Column layout starts here    -->
+  <section class="tab">
+    <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openCity(event, 'addtask')">Add Task</button>
+    <!-- <button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      Create Task
+  </button> -->
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  </section>
+  
+  <section id="addtask" class="tabcontent">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <section id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+  </section>
+  
+  <section id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+  </section>
+  <!-- Column layout ends here    -->
+
+
+
+    <!-- <div class="container-fluid">
         <div class="row">
-            <!-- First Column! -->
-            <div class="position-fixed-start col-4 col-md-2" id="navigation">
+            First Column! -->
+            <!-- <div class="position-fixed-start col-4 col-md-2" id="navigation"> -->
                 <!-- Brand -->
-                <nav class="navbar">
-                    <a class="navbar-brand my-5 mx-4" href="#">
-                        Group 4
-                    </a>
+                <!-- <nav class="navbar"> -->
+                    
                     <!-- Modal Battons Start! -->
-                    <div class="modal-form">
+                    <!-- <div class="modal-form"> -->
                     <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <!-- <button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Create Task
-                        </button>
+                        </button> -->
                         
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -39,8 +94,8 @@
                                         <h5 class="modal-title" id="staticBackdropLabel">Add New Task</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
+                                    </div> -->
+                                    <!-- <div class="modal-body">
                                         <form>
                                             <div class="form-group row">
                                                 <label for="task" class="col-sm-3 col-form-label">Task Name</label>
@@ -51,7 +106,6 @@
                                             <div class="form-group row">
                                                 <label for="duedate" class="col-sm-3 col-form-label">Due Date</label>
                                                 <div class="col-sm-5">
-
                                                     <input type="date" class="form-control" id="duedate">
                                                 </div>
                                             </div>
@@ -101,30 +155,26 @@
                                                 <textarea id="description" name="notes" rows="5" cols="6"></textarea>
                                             </div>
 
-                                    </div>
-                                    <div class="modal-footer">
+                                    </div> -->
+                                    <!-- <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
                                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!--Modal Buttons Finish!  -->
-                </nav>
-            </div>
+                <!-- </nav>
+            </div>  -->
 
-            <!-- Second Column! -->
+            <!-- Second Column!
             <div class="col-8 col-md-10" id="taskList">
                 <div class="header">
-                    <div class="row">
-                        <div class="col-8 col-md-10">
-                            <h1>Task Planner</h1>
-                        </div>
-                        <div class="col-4 col-md-2 my-5">
-                            <h6>Welcome User</h6>
-                        </div>
+                    <div class="row"> -->
+                        
+                        
                         <!--Cards start  -->
-                        <div class="main">
+                        <!-- <div class="main">
                             <div class="container" id="cards">
                                 <div class="row row-cols-1 row-cols-md-4 g-4">
                                     <div class="col">
@@ -141,9 +191,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- SECOND CARD -->
-                                    <div class="col">
+                                    <!-- <div class="col">
                                         <div class="card" style="width: 14rem;">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Task Name</h5>
@@ -157,9 +207,9 @@
                                                     <a href="#" class="btn btn-primary">Delete</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- THIRD CARD -->
-                                    <div class="col">
+                                    <!-- <div class="col">
                                         <div class="card" style="width: 14rem;"> 
                                             <div class="card-body">
                                                     <h5 class="card-title">Task Name</h5>
@@ -174,9 +224,9 @@
                                                 
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- FOURTH CARD -->
-                                    <div class="col">
+                                    <!-- <div class="col">
                                         <div class="card" style="width: 14rem";>
                                                 <div class="card-body">
                                                     <h5 class="card-title">Task Name</h5>
@@ -190,9 +240,9 @@
                                                     <a href="#" class="btn btn-primary">Delete</a>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- FIFTH CARD -->
-                                    <div class="col">
+                                    <!-- <div class="col">
                                         <div class="card" style="width: 14rem;">
                                         <div class="card-body">
                                         <h5 class="card-title">Task Name</h5>
@@ -206,9 +256,9 @@
                                             
                                     </div>
                                     </div>
-                                    </div>
+                                    </div> -->
                                     <!-- SIXTH CARD -->
-                                    <div class="col">
+                                    <!-- <div class="col">
                                         <div class="card" style="width: 14rem;">
                                             <div class="card-body">
                                                 <h5 class="card-title">Task Name</h5>
@@ -224,26 +274,50 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Cards finish -->
-                    </div>
+                    <!-- </div>
                 </div>
             </div>
 
         </div>
 
     </div>
+ --> 
 
-
-    <footer>
+    <!-- <footer>
         <span class='tagline'>copyright group4.com</span>
-    </footer>
+    </footer> -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous">
     </script>
+
+<script>
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
 </body>
 
 
