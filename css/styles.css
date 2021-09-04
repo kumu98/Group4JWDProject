@@ -4,29 +4,20 @@ header{
     background-color: rgb(72,71,139);
     /* line-height:100px; */
     color: khaki;
+    text-align: center;
 }
 body{
     margin:0px;
-    background-color: rgb(214,179,179);
+    background-color:rgb(191, 195, 199);
     font-family:'rock salt', cursive;
-    text-align: center;
+    
 }
 *{
     box-sizing: border-box;
     margin:0px;
 }
-.row{
-    display: flex;
-    flex-wrap: wrap;
-}
-.side{
-    flex:30%;
-    padding:20px;
-}
-.main{
-    flex:70%;
-    padding: 20px;
-}
+
+
 
 img{
     float:left;
@@ -35,17 +26,16 @@ img{
 
 /* Style the tab */
 .tab {
-    margin-top:2px;
     float: left;
     border: 1px solid #ccc;
-    background-color: #e0a4a4;
+    background-color: rgb(72,71,139);
     width: 150px;
     height: 700px;
   }
   
   /* Style the buttons that are used to open the tab content */
   .tab button {
-    display: block;
+    display: inline-block;
     background-color: inherit;
     color: black;
     padding: 22px 16px;
@@ -76,4 +66,9 @@ img{
     border-left: none;
     height: 700px;
   }
+
+  h5{
+    color:tomato;
+  }
+  
   

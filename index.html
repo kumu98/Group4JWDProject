@@ -25,12 +25,8 @@
 
   <!-- Column layout starts here    -->
   <section class="tab">
-    <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openCity(event, 'addtask')">Add Task</button>
-    <!-- <button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      Create Task
-  </button> -->
-    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openmenu(event, 'addtask')">Add Task</button>
+    <button class="tablinks" onclick="openmenu(event, 'mytask')">My Task</button>
   </section>
   
   <section id="addtask" class="tabcontent">
@@ -38,18 +34,86 @@
       <div class="modal-dialog">
 
         <div class="modal-content">
+
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
 
           <div class="modal-body">
-            
+            <div class="modal-body">
+                <form>
+        
+                  <div class="form-group row">
+                    <label for="task" class="col-sm-3 col-form-label">Task Name</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="task">
+                    </div>
+                  </div>
+        
+                  <div class="form-group row">
+                    <label for="duedate" class="col-sm-3 col-form-label">Due Date</label>
+                    <div class="col-sm-5">
+                      <input type="date" class="form-control" id="duedate">
+                    </div>
+                  </div>
+        
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-3 pt-0">Status</legend>
+                      <div class="col-sm-5">
+        
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            To-Do
+                          </label>
+                        </div>
+        
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            In-Progress
+                          </label>
+                        </div>
+        
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                          <label class="form-check-label" for="gridRadios3">
+                            Review
+                          </label>
+                        </div>
+        
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                          <label class="form-check-label" for="gridRadios3">
+                            Completed
+                          </label>
+                        </div>
+        
+                      </div>
+                    </div>
+                  </fieldset>
+        
+                  <div class="form-group row">
+                    <label for="assign" class="col-sm-3 col-form-label">Assigned To</label>
+                    <div class="col-sm-5">
+                      <input type="text" class="form-control" id="assign">
+                    </div>
+                  </div>
+        
+                  <div class="form-group row">
+                    <label for="description" class="col-sm-3">Description:</label>
+                    <textarea id="description" name="notes" rows="5" cols="6">
+                    </textarea>
+                  </div>
+               </form>
+              </div>
           </div>
 
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Understood</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+            <button type="button" class="btn btn-primary">Cancel</button>
           </div>
 
         </div>
@@ -58,265 +122,175 @@
     </div>
   </section>
   
-  <section id="Paris" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
-  </section>
-  
-  <section id="Tokyo" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
-  </section>
-  <!-- Column layout ends here    -->
+  <section id="mytask" class="tabcontent">
+    <div class="container">
 
+      <div class="row">
+          <!-- first column starts here -->
+        <div class="col">
+          <div class="row">
+              To-Do
+          </div>
 
-
-    <!-- <div class="container-fluid">
-        <div class="row">
-            First Column! -->
-            <!-- <div class="position-fixed-start col-4 col-md-2" id="navigation"> -->
-                <!-- Brand -->
-                <!-- <nav class="navbar"> -->
-                    
-                    <!-- Modal Battons Start! -->
-                    <!-- <div class="modal-form"> -->
-                    <!-- Button trigger modal -->
-                        <!-- <button type="button" class="btn btn-primary my-4" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                            Create Task
-                        </button> -->
-                        
-                        <!-- Modal -->
-                        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Add New Task</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div> -->
-                                    <!-- <div class="modal-body">
-                                        <form>
-                                            <div class="form-group row">
-                                                <label for="task" class="col-sm-3 col-form-label">Task Name</label>
-                                                <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="task">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="duedate" class="col-sm-3 col-form-label">Due Date</label>
-                                                <div class="col-sm-5">
-                                                    <input type="date" class="form-control" id="duedate">
-                                                </div>
-                                            </div>
-                                            <fieldset class="form-group">
-                                                <div class="row">
-                                                    <legend class="col-form-label col-sm-3 pt-0">Status</legend>
-                                                    <div class="col-sm-5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                                id="gridRadios1" value="option1" checked>
-                                                            <label class="form-check-label" for="gridRadios1">
-                                                                To-Do
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                                id="gridRadios2" value="option2">
-                                                            <label class="form-check-label" for="gridRadios2">
-                                                                In-Progress
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                                id="gridRadios3" value="option3">
-                                                            <label class="form-check-label" for="gridRadios3">
-                                                                Review
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="gridRadios"
-                                                                id="gridRadios3" value="option3">
-                                                            <label class="form-check-label" for="gridRadios3">
-                                                                Completed
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <div class="form-group row">
-                                                <label for="assign" class="col-sm-3 col-form-label">Assigned To</label>
-                                                <div class="col-sm-5">
-                                                    <input type="text" class="form-control" id="assign">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="description" class="col-sm-3">Description:</label>
-                                                <textarea id="description" name="notes" rows="5" cols="6"></textarea>
-                                            </div>
-
-                                    </div> -->
-                                    <!-- <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
-                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!--Modal Buttons Finish!  -->
-                <!-- </nav>
-            </div>  -->
-
-            <!-- Second Column!
-            <div class="col-8 col-md-10" id="taskList">
-                <div class="header">
-                    <div class="row"> -->
-                        
-                        
-                        <!--Cards start  -->
-                        <!-- <div class="main">
-                            <div class="container" id="cards">
-                                <div class="row row-cols-1 row-cols-md-4 g-4">
-                                    <div class="col">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Task Name</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>>
-                                                    <p>TEXT GOES HERE</p>
-                                                    <a href="#" class="card-link">Yuliia - To Do</a>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-primary">Delete</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- SECOND CARD -->
-                                    <!-- <div class="col">
-                                        <div class="card" style="width: 14rem;">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Task Name</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                                    <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                                                    <p>TEXT GOES HERE</p>
-                                                
-                                                
-                                                    <a href="#" class="card-link">Kumu - To do </a> <br>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-primary">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- THIRD CARD -->
-                                    <!-- <div class="col">
-                                        <div class="card" style="width: 14rem;"> 
-                                            <div class="card-body">
-                                                    <h5 class="card-title">Task Name</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                                    <p class="card-text"> list of things to do</p>
-                                                    <p>TEXT GOES HERE</p>
-
-
-                                                    <a href="#" class="card-link">Kumu - In Progress</a>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-primary">Delete</a>    
-                                                
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- FOURTH CARD -->
-                                    <!-- <div class="col">
-                                        <div class="card" style="width: 14rem";>
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Task Name</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                                    <p class="card-text"> list of things to do</p>
-                                                    <p>TEXT GOES HERE</p>
-                                            
-                                            
-                                                    <a href="#" class="card-link">Kumu - In Progress</a>
-                                                    <a href="#" class="btn btn-primary">Edit</a>
-                                                    <a href="#" class="btn btn-primary">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div> -->
-                                    <!-- FIFTH CARD -->
-                                    <!-- <div class="col">
-                                        <div class="card" style="width: 14rem;">
-                                        <div class="card-body">
-                                        <h5 class="card-title">Task Name</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                        <p> TEXT GOES HERE </p> 
-                                        <br>
-                                        <a href="#" class="card-link">Yuliia - To Do</a> <br>
-                                        <a href="#" class="btn btn-primary">Edit</a>
-                                        <a href="#" class="btn btn-primary">Delete</a>
-                                            
-                                    </div>
-                                    </div>
-                                    </div> -->
-                                    <!-- SIXTH CARD -->
-                                    <!-- <div class="col">
-                                        <div class="card" style="width: 14rem;">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Task Name</h5>
-                                                <h6 class="card-subtitle mb-2 text-muted">Due Date: XX/XX/XXXX</h6>
-                                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                                <p>TEXT GOES HERE</p>
-                                                <br>
-                                                <a href="#" class="card-link">Kumu - DONE</a> <br>
-                                                <a href="#" class="btn btn-primary">Edit</a>
-                                                <a href="#" class="btn btn-primary">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- Cards finish -->
-                    <!-- </div>
-                </div>
+          <div class="row">
+            <div class="card" style="width: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title">Sprint-1</h5>
+                  <p class="card-text">To create a one-page task planner</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Assigned To: Group-4 Team</li>
+                <li class="list-group-item">Due: 06-09-2021</li>
+                <li class="list-group-item">Status: To-Do</li>
+              </ul>
+              <div class="card-body text-right">
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
             </div>
+          </div>
+
+          <div class="row">
+            <div class="card" style="width: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title">Task Form</h5>
+                <p class="card-text">To create a pop-up task form to collect all details of a task</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Assigned To: Group-4 Team</li>
+                <li class="list-group-item">Due: 06-09-2021</li>
+                <li class="list-group-item">Status: To-Do</li>
+              </ul>
+              <div class="card-body text-right">
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
+            </div>
+          </div>
+
+        </div>  
+          <!-- first column ends here  -->
+          
+<!-- second column starts here -->
+        <div class="col">
+          <div class="row">
+                In-Progress
+          </div>
+  
+          <div class="row">
+            <div class="card" style="width: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title">Task Form</h5>
+                <p class="card-text">To create a pop-up task form to collect all details of a task</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Assigned To: Group-4 Team</li>
+                <li class="list-group-item">Due: 06-09-2021</li>
+                <li class="list-group-item">Status: In-progress</li>
+              </ul>
+              <div class="card-body text-right">
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+<!-- second column ends here  -->
+
+<!-- third column starts here  -->
+        <div class="col">
+          <div class="row">
+                Review
+          </div>
+  
+          <div class="row">
+            <div class="card" style="width: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title">Task Form</h5>
+                <p class="card-text">To create a pop-up task form to collect all details of a task</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Assigned To: Group-4 Team</li>
+                <li class="list-group-item">Due: 06-09-2021</li>
+                <li class="list-group-item">Status: Review</li>
+              </ul>
+              <div class="card-body text-right">
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+<!-- third column ends here  -->
+
+<!-- fourth column starts here  -->
+        <div class="col">
+          <div class="row">
+                Done
+          </div>
+  
+          <div class="row">
+            <div class="card" style="width: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title">Task Form</h5>
+                <p class="card-text">To create a pop-up task form to collect all details of a task</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Assigned To: Group-4 Team</li>
+                <li class="list-group-item">Due: 06-09-2021</li>
+                <li class="list-group-item">Status: Done</li>
+              </ul>
+              <div class="card-body text-right">
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
+              </div>
+            </div>
+          </div>
 
         </div>
 
+      </div>
+
     </div>
- --> 
+    
+  </section>
+  
+  <!-- Column layout ends here    -->
+  
+  <footer class="container text-center">
+    <p>copyright group4.com</p>
+  </footer>
 
-    <!-- <footer>
-        <span class='tagline'>copyright group4.com</span>
-    </footer> -->
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous">
-    </script>
+  </script>
 
-<script>
-function openCity(evt, cityName) {
+  <script>
+    function openmenu(evt, tasktype) {
   // Declare all variables
-  var i, tabcontent, tablinks;
+    var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
-  }
+    }
 
   // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+    }
 
   // Show the current tab, and add an "active" class to the link that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>
+    document.getElementById(tasktype).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+  </script>
 
 </body>
 
