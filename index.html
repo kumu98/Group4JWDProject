@@ -22,7 +22,7 @@
   </header>
   <!-- Logo & Heading ends here  -->
 
-
+<article id="content-wrap">
   <!-- Column layout starts here    -->
   <section class="tab">
     <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openmenu(event, 'addtask')">Add Task</button>
@@ -45,14 +45,14 @@
                 <form>
         
                   <div class="form-group row">
-                    <label for="task" class="col-sm-3 col-form-label">Task Name</label>
+                    <label for="task" class="col-sm-4 col-form-label">Task Name</label>
                     <div class="col-sm-5">
                       <input type="text" class="form-control" id="task">
                     </div>
                   </div>
         
                   <div class="form-group row">
-                    <label for="duedate" class="col-sm-3 col-form-label">Due Date</label>
+                    <label for="duedate" class="col-sm-4 col-form-label">Due Date</label>
                     <div class="col-sm-5">
                       <input type="date" class="form-control" id="duedate">
                     </div>
@@ -60,7 +60,7 @@
         
                   <fieldset class="form-group">
                     <div class="row">
-                      <legend class="col-form-label col-sm-3 pt-0">Status</legend>
+                      <legend class="col-form-label col-sm-4 pt-0">Status</legend>
                       <div class="col-sm-5">
         
                         <div class="form-check">
@@ -96,7 +96,7 @@
                   </fieldset>
         
                   <div class="form-group row">
-                    <label for="assign" class="col-sm-3 col-form-label">Assigned To</label>
+                    <label for="assign" class="col-sm-4 col-form-label">Assigned To</label>
                     <div class="col-sm-5">
                       <input type="text" class="form-control" id="assign">
                     </div>
@@ -113,7 +113,7 @@
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
-            <button type="button" class="btn btn-primary">Cancel</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
           </div>
 
         </div>
@@ -259,10 +259,10 @@
   
   <!-- Column layout ends here    -->
   
-  <footer class="container text-center">
+  <footer class="container">
     <p>copyright group4.com</p>
   </footer>
-
+</article>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
@@ -287,8 +287,8 @@
     }
 
   // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(tasktype).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(tasktype).style.display = "block" ;
+    evt.currentTarget.className += "active";
     }
   </script>
 
