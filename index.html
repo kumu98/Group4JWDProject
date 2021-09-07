@@ -24,12 +24,13 @@
 
 
   <!-- Column layout starts here    -->
-  <section class="tab">
+<section class="d-flex">
+  <div class="tab flex-column">
     <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openmenu(event, 'addtask')">Add Task</button>
-    <button class="tablinks" onclick="openmenu(event, 'mytask')">My Task</button>
-  </section>
+    <button class="tablinks" onclick="openmenu(event, 'mytask')">My Task </button>
+  </div>
   
-  <section id="addtask" class="tabcontent">
+  <div id="addtask" class="tabcontent">
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
 
@@ -120,10 +121,10 @@
 
       </div>
     </div>
-  </section>
+  </div>
   
-  <section id="mytask" class="tabcontent">
-    <div class="container">
+  <div id="mytask" class="tabcontent">
+    <div class="d-inline-flex">
 
       <div class="row">
           <!-- first column starts here -->
@@ -255,7 +256,8 @@
 
     </div>
     
-  </section>
+  </div>
+</section> 
   
   <!-- Column layout ends here    -->
   

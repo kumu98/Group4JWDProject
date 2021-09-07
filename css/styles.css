@@ -2,10 +2,16 @@ header{
     margin:0;
     padding: 2px;
     background-color: rgb(72,71,139);
-    /* line-height:100px; */
     color: khaki;
-    text-align: center;
+    display:flex;
+    
+  }
+
+h1{
+  text-align: center;
+  width: 100%;
 }
+
 body{
     margin:0 auto;
     background-color:rgb(191, 195, 199);
@@ -21,30 +27,24 @@ body{
     padding:0;
 }
 
-
-
 img{
-    float:left;
     width: 100px;
 }
 
 /* Style the tab */
 .tab {
-    float: left;
     border: 1px solid #ccc;
     background-color: rgb(72,71,139);
-    width: 170px;
-    height: 700px;
-   
+    margin-left: 5px;   
+    margin-top: 5px;
   }
   
   /* Style the buttons that are used to open the tab content */
   .tab button {
-    display: inline-block;
+    display: flex;
     background-color: inherit;
     color:khaki;
     padding: 22px 16px;
-    width: 100%;
     border: none;
     outline: none;
     text-align: left;
@@ -64,7 +64,6 @@ img{
   
   /* Style the tab content */
   .tabcontent {
-    float: left;
     padding: 0px 12px;
     border: 1px solid #ccc;
     width: fit-content;
@@ -78,11 +77,6 @@ img{
   }
 
   footer{
-    position: absolute;
-    bottom: 0;
-    left:0;
-    right:0;
-    width:100%;
     text-align: center;
   }
 
