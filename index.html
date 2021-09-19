@@ -2,143 +2,131 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link href="./css/styles.css" rel="stylesheet">
-        <title>Task Planner</title>
+  <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>Task Planner</title>
 </head>
 
 <body>
 
-  <!-- Logo & Heading starts here -->
+<!-- Logo & Heading starts here -->
   <header>
     <img src="./images/logo.png" alt="logo"/>
     <h1 class="display-2">Task Planner</h1>
   </header>
-  <!-- Logo & Heading ends here  -->
+<!-- Logo & Heading ends here  -->
 
+<!-- Column layout starts here    -->
+  <section class="d-flex">
+    <div class="tab flex-column">
+      <button id="formlink" class="formlink" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Task</button>
+      <button id="tasklink" class="tasklink">My Task </button>
+    </div>
+    
+    <div id="addtask" class="tabcontent">
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Task Form</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-  <!-- Column layout starts here    -->
-<section class="d-flex">
-  <div class="tab flex-column">
-    <button class="tablinks" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="openmenu(event, 'addtask')">Add Task</button>
-    <button class="tablinks" onclick="openmenu(event, 'mytask')">My Task </button>
-  </div>
-  
-  <div id="addtask" class="tabcontent">
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-
-        <div class="modal-content">
-
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Task Form</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <div class="modal-body">
             <div class="modal-body">
-                <form>
+              <form>
+                <div class="row mb-3">
+                  <label for="task" class="col-sm-4 col-form-label">Task Name</label>
+                  <div class="col-auto">
+                    <input type="text" class="form-control" id="task">
+                  </div>
+                </div>
+  
+                <div class="row mb-3">
+                  <label for="duedate" class="col-sm-4 col-form-label">Due Date</label>
+                  <div class="col-auto">
+                    <input type="date" class="form-control" id="duedate">
+                  </div>
+                </div>
         
-                  <div class="form-group row">
-                    <label for="task" class="col-sm-4 col-form-label">Task Name</label>
-                    <div class="col-sm-5">
-                      <input type="text" class="form-control" id="task">
+                <fieldset class="row mb-3">
+                  <legend class="col-form-label col-sm-4 pt-0">Status</legend>
+                  <div class="col-auto">
+  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        To-Do
+                      </label>
+                    </div>
+  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                        In-Progress
+                      </label>
+                    </div>
+  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                      <label class="form-check-label" for="gridRadios3">
+                        Review
+                      </label>
+                    </div>
+  
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                      <label class="form-check-label" for="gridRadios3">
+                        Completed
+                      </label>
                     </div>
                   </div>
+                </fieldset>
         
-                  <div class="form-group row">
-                    <label for="duedate" class="col-sm-4 col-form-label">Due Date</label>
-                    <div class="col-sm-5">
-                      <input type="date" class="form-control" id="duedate">
-                    </div>
+                <div class="row mb-3">
+                  <label for="assign" class="col-sm-4 col-form-label">Assigned To</label>
+                  <div class="col-auto">
+                    <input type="text" class="form-control" id="assign">
                   </div>
+                </div>
         
-                  <fieldset class="form-group">
-                    <div class="row">
-                      <legend class="col-form-label col-sm-4 pt-0">Status</legend>
-                      <div class="col-sm-5">
-        
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                          <label class="form-check-label" for="gridRadios1">
-                            To-Do
-                          </label>
-                        </div>
-        
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                          <label class="form-check-label" for="gridRadios2">
-                            In-Progress
-                          </label>
-                        </div>
-        
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                          <label class="form-check-label" for="gridRadios3">
-                            Review
-                          </label>
-                        </div>
-        
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
-                          <label class="form-check-label" for="gridRadios3">
-                            Completed
-                          </label>
-                        </div>
-        
-                      </div>
-                    </div>
-                  </fieldset>
-        
-                  <div class="form-group row">
-                    <label for="assign" class="col-sm-4 col-form-label">Assigned To</label>
-                    <div class="col-sm-5">
-                      <input type="text" class="form-control" id="assign">
-                    </div>
-                  </div>
-        
-                  <div class="form-group row">
-                    <label for="description" class="col-sm-3">Description:</label>
-                    <textarea id="description" name="notes" rows="5" cols="6">
-                    </textarea>
-                  </div>
-               </form>
-              </div>
-          </div>
+                <div class="row mb-3">
+                  <label for="description" class="col-sm-3">Description:</label>
+                  <textarea id="description" name="notes" rows="5" cols="6">
+                  </textarea>
+                </div>
+              </form>
+            </div>
 
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Submit</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
           </div>
-
         </div>
-
       </div>
     </div>
-  </div>
   
-  <div id="mytask" class="tabcontent">
-    <div class="d-inline-flex">
+    <div id="mytask" class="tabcontent">
+      <div class="row d-inline-flex">
 
-      <div class="row">
-          <!-- first column starts here -->
+<!-- first column starts here -->
         <div class="col">
           <div class="row">
-              To-Do
+                To-Do
           </div>
 
-          <div class="row">
-            <div class="card" style="width: 14rem;">
-              <div class="card-body">
-                <h5 class="card-title">Sprint-1</h5>
-                  <p class="card-text">To create a one-page task planner</p>
-              </div>
+        <div class="row">
+          <div class="card" style="width: 17rem;">
+            <div class="card-body">
+              <h5 class="card-title">Sprint-1</h5>
+              <p class="card-text">To create a one-page task planner</p>
+            </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Assigned To: Group-4 Team</li>
                 <li class="list-group-item">Due: 06-09-2021</li>
@@ -152,7 +140,7 @@
           </div>
 
           <div class="row">
-            <div class="card" style="width: 14rem;">
+            <div class="card" style="width: 17rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -170,7 +158,7 @@
           </div>
 
         </div>  
-          <!-- first column ends here  -->
+<!-- first column ends here  -->
           
 <!-- second column starts here -->
         <div class="col">
@@ -179,7 +167,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 14rem;">
+            <div class="card" style="width: 17rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -206,7 +194,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 14rem;">
+            <div class="card" style="width: 17rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -233,7 +221,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 14rem;">
+            <div class="card" style="width: 17rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -256,7 +244,6 @@
 
     </div>
     
-  </div>
 </section> 
   
   <!-- Column layout ends here    -->
@@ -271,27 +258,7 @@
         crossorigin="anonymous">
   </script>
 
-  <script>
-    function openmenu(evt, tasktype) {
-  // Declare all variables
-    var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-  // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(tasktype).style.display = "block" ;
-    evt.currentTarget.className += "active";
-    }
+  <script src="./scripts.js">
   </script>
 
 </body>
