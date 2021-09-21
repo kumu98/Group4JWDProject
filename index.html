@@ -7,10 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="./css/styles.css" rel="stylesheet">
-    <title>Task Planner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link href="./css/styles.css" rel="stylesheet">
+  <title>Task Planner</title>
 </head>
 
 <body>
@@ -24,14 +23,14 @@
 
 <!-- Column layout starts here    -->
   <section class="d-flex">
-    <div class="tab flex-column">
+    <div class="tab">
       <button id="formlink" class="formlink" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Task</button>
       <button id="tasklink" class="tasklink">My Task </button>
     </div>
     
-    <div id="addtask" class="tabcontent">
+    <div id="addtask" class="tabcontent d-flex">
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-fullscreen-sm-down">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">Task Form</h5>
@@ -113,7 +112,7 @@
     </div>
   
     <div id="mytask" class="tabcontent">
-      <div class="row d-inline-flex">
+      <div class="row">
 
 <!-- first column starts here -->
         <div class="col">
@@ -122,7 +121,7 @@
           </div>
 
         <div class="row">
-          <div class="card" style="width: 17rem;">
+          <div class="card" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Sprint-1</h5>
               <p class="card-text">To create a one-page task planner</p>
@@ -140,7 +139,7 @@
           </div>
 
           <div class="row">
-            <div class="card" style="width: 17rem;">
+            <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -167,7 +166,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 17rem;">
+            <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -194,7 +193,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 17rem;">
+            <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -221,7 +220,7 @@
           </div>
   
           <div class="row">
-            <div class="card" style="width: 17rem;">
+            <div class="card" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title">Task Form</h5>
                 <p class="card-text">To create a pop-up task form to collect all details of a task</p>
@@ -253,9 +252,7 @@
   </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
   </script>
 
   <script src="./scripts.js">
