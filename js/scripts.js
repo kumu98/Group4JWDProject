@@ -7,7 +7,7 @@ function displayCard() {
 }
 
 
-tasklink.addEventListener('click',displayCard);
+tasklink.addEventListener('click', displayCard);
 
 // Task 4 - Task Form Validation
 const taskName = document.getElementById('taskName');
@@ -20,7 +20,7 @@ const nameErr = document.getElementById('nameErr');
 const dateErr = document.getElementById('dateErr');
 const assignedErr = document.getElementById('assignedErr');
 const descriptionErr = document.getElementById('descriptionErr');
-const gridRadios = document.getElementsByName('gridRadios');
+const gridRadios = document.querySelectorAll('input[name="gridRadios"]');
 const radioErr = document.getElementById('radioErr');
 
 function validFormFieldInput(){
@@ -50,19 +50,20 @@ function validDueDate(){
 submitBtn.addEventListener('click', validDueDate);
 
 function validRadio(){
-    let radioVal = false;
-    
-    for(let i=0; i < gridRadios.length; i++){
-            if(gridRadios[i].checked == true){
-                radioVal = true;
-                radioErr.innerHTML = '';    
-            }
-            else{
-                radioErr.innerHTML = 'Please select the status.'
-                radioErr.style.color = 'red';
-                return false;
-            }
+    let radioVal = gridRadios.value;
+    radioVal = false;
+    for(let i=0; i < radioVal.length; i++){
+        if(radioVal[i] == true){
+            radioVal = true;
+            radioErr.innerHTML = '';
+            return true;
         }
+        else{
+            radioErr.innerHTML = 'Please select the status.'
+            radioErr.style.color = 'red';
+            return false;
+        }
+    }
    
 }
 submitBtn.addEventListener('click', validRadio);
