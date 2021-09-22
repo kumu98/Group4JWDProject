@@ -1,0 +1,23 @@
+*{
+    /* border: 1px solid black; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar-brand {
+    margin-top: 25px;
+    /* font-size: 36px; */
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #0d6efd;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h6 {
+    margin-top: 58px;
+    color: rgb(30, 214, 214);
+}
