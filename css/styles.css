@@ -1,27 +1,89 @@
+header{
+  background-color: rgb(72,71,139);
+  color: khaki;
+  display:flex;
+    
+}
+
 h1{
-    margin:0;
-    background-color: rgb(72,71,139);
-    line-height:100px;
-    color: khaki;
+  text-align: center;
+  width: 100%;
 }
+
 body{
-    margin:0px;
-    background-color: rgb(214,179,179);
+    margin:0 auto;
+    background-color:rgb(191, 195, 199);
     font-family:'rock salt', cursive;
-    text-align: center;
+    width:100%;
+    min-height: 100vh;   
 }
+
+
 *{
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
-.row{
-    display: flex;
-    flex-wrap: wrap;
+
+img{
+    width: 90px;
 }
-.side{
-    flex:30%;
-    padding:20px;
+
+/* Style the tab */
+.tab {
+  position: relative;
+    /* border: 1px solid #ccc; */
+  background-color: rgb(72,71,139);
+    /* margin-left: 5px;   
+    margin-top: 5px; */
 }
-.main{
-    flex:70%;
-    padding: 20px;
+  
+  /* Style the buttons that are used to open the tab content */
+.tab button {
+  position: relative;
+  display: block;
+  background-color: inherit;
+  color:khaki;
+  width:100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
 }
+  
+  /* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(238,45,94);
+}
+  
+  /* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: red;
+}
+  
+  /* Style the tab content */
+.tabcontent {
+  padding: 0px 12px;
+  /* border: 1px solid #ccc; */
+  /* width: fit-content; */
+  /* border-left: none; */
+  height: auto;
+  display: none;
+  float: left;
+}
+
+h5{
+  color:tomato;
+}
+
+footer{
+  text-align: center;
+}
+
+.card{
+  background-color: lightgrey;
+}
+  
+  
