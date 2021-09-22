@@ -20,7 +20,7 @@ const nameErr = document.getElementById('nameErr');
 const dateErr = document.getElementById('dateErr');
 const assignedErr = document.getElementById('assignedErr');
 const descriptionErr = document.getElementById('descriptionErr');
-const gridRadios = document.querySelectorAll('input[name="gridRadios"]');
+const gridRadios = document.getElementsByName('gridRadios');
 const radioErr = document.getElementById('radioErr');
 
 function validFormFieldInput(){
@@ -50,19 +50,18 @@ function validDueDate(){
 submitBtn.addEventListener('click', validDueDate);
 
 function validRadio(){
-    let radioVal = gridRadios.value;
-    radioVal = false;
+      
+    let radioVal = gridRadios;
+    let istrue = false;
     for(let i=0; i < radioVal.length; i++){
-        if(radioVal[i] == true){
-            radioVal = true;
+        if(radioVal[i].checked == true){
             radioErr.innerHTML = '';
-            return true;
+            istrue = true;
         }
-        else{
-            radioErr.innerHTML = 'Please select the status.'
-            radioErr.style.color = 'red';
-            return false;
-        }
+    }
+    if(!istrue){
+        radioErr.innerHTML = 'Please select the status.'
+        radioErr.style.color = 'red';
     }
    
 }
@@ -82,8 +81,8 @@ function validAssignTo(){
 submitBtn.addEventListener('click', validAssignTo);
 
 function validDescription(){
-    
-    if(description.value === ''){
+    if(description.value.length < 5 || description.value === null){
+        console.log(descriptionErr);
         descriptionErr.innerHTML = 'Please add some description.';
         descriptionErr.style.color = 'red';
         console.log(descriptionErr);
