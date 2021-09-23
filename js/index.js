@@ -1,16 +1,10 @@
 const taskList = new TaskManager();
 // taskList.addTask('Take out the trash', 'Take out the trash to the front of the house', 'Nick', '2020-09-20', 'In Progress');
-// console.log(taskList._tasks);
+console.log(taskList._tasks);
 // const taskHtml = createTaskHtml('validation','validate all fields in form','kumudhini','2020-09-21','completed');
 // console.log(taskHtml);
 
 
-// let tasklink = document.getElementById('tasklink');
-// let mytask = document.getElementById('mytask');
-// function displayCard() {
-//     mytask.style.display = "block";
-// }
-// tasklink.addEventListener('click', displayCard);
 
 // Task 4 - Task Form Validation
 
@@ -23,8 +17,6 @@ const taskName = document.getElementById('taskName');
 const duedate = document.getElementById('duedate');
 const assign = document.getElementById('assign');
 const description = document.getElementById('description');
-// const submitBtn = document.getElementById('submitBtn');
-// const cancelBtn = document.getElementById('cancelBtn');
 const nameErr = document.getElementById('nameErr');
 const dateErr = document.getElementById('dateErr');
 const assignedErr = document.getElementById('assignedErr');
@@ -105,6 +97,8 @@ const radioErr = document.getElementById('radioErr');
 
     taskform.reset();
 
-    taskList.render;
+    taskList.render();
 });
+
+
 
