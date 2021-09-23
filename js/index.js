@@ -1,6 +1,8 @@
 const taskList = new TaskManager();
 // taskList.addTask('Take out the trash', 'Take out the trash to the front of the house', 'Nick', '2020-09-20', 'In Progress');
-console.log(taskList._tasks);
+// console.log(taskList._tasks);
+// const taskHtml = createTaskHtml('validation','validate all fields in form','kumudhini','2020-09-21','completed');
+// console.log(taskHtml);
 
 
 // let tasklink = document.getElementById('tasklink');
@@ -101,6 +103,8 @@ const radioErr = document.getElementById('radioErr');
         radioInput
     );
 
-taskform.reset();
+    taskform.reset();
+
+    taskList.render;
 });
 
