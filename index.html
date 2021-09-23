@@ -38,19 +38,19 @@
             </div>
 
             <div class="modal-body">
-              <form>
+              <form id="taskform">
                 <div class="row mb-3">
-                  <span id="nameErr"></span>
                   <label for="task" class="col-sm-4 col-form-label">Task Name</label>
                   <div class="col-auto">
+                    <span id="nameErr"></span>
                     <input type="text" class="form-control" id="taskName">
                   </div>
                 </div>
   
                 <div class="row mb-3">
-                  <span id="dateErr"></span>
                   <label for="duedate" class="col-sm-4 col-form-label">Due Date</label>
                   <div class="col-auto">
+                    <span id="dateErr"></span>
                     <input type="date" class="form-control" id="duedate">
                   </div>
                 </div>
@@ -61,28 +61,28 @@
                     <span id="radioErr"></span>
   
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="To-Do">
                       <label class="form-check-label" for="gridRadios1">
                         To-Do
                       </label>
                     </div>
   
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="In-Progress">
                       <label class="form-check-label" for="gridRadios2">
                         In-Progress
                       </label>
                     </div>
   
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="Review">
                       <label class="form-check-label" for="gridRadios3">
                         Review
                       </label>
                     </div>
   
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="Completed">
                       <label class="form-check-label" for="gridRadios4">
                         Completed
                       </label>
@@ -91,25 +91,26 @@
                 </fieldset>
         
                 <div class="row mb-3">
-                  <span id="assignedErr"></span>
                   <label for="assign" class="col-sm-4 col-form-label">Assigned To</label>
                   <div class="col-auto">
+                    <span id="assignedErr"></span>
                     <input type="text" class="form-control" id="assign">
                   </div>
                 </div>
         
                 <div class="row mb-3">
-                  <span id="descriptionErr"></span>
                   <label for="description" class="col-sm-3">Description:</label>
+                  <span id="descriptionErr"></span>
                   <textarea id="description" name="notes" class="form-control" rows="5" cols="6"></textarea>
                 </div>
+                <div class="modal-footer">
+                  <button type="submit" id="submitBtn" class="btn btn-secondary">Submit</button>
+                  <button type="submit" id="cancelBtn" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
               </form>
             </div>
-
-            <div class="modal-footer">
-              <button type="button" id="submitBtn" class="btn btn-secondary">Submit</button>
-              <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -260,7 +261,7 @@
   </script>
   <script src="./js/taskManager.js">
   </script>
-  <script src="./js/scripts.js">
+  <script src="./js/index.js">
   </script>
 
 </body>
