@@ -66,12 +66,12 @@ img{
   /* Style the tab content */
 .tabcontent {
   padding: 0px 12px;
-  /* border: 1px solid #ccc; */
-  /* width: fit-content; */
-  /* border-left: none; */
+  /* border: 1px solid #ccc;
+  width: fit-content;
+  border-left: none;
   height: auto;
   display: none;
-  float: left;
+  float: left; */
 }
 
 h5{
