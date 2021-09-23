@@ -1,23 +1,20 @@
-class TaskManager{
-    constructor(){
+class TaskManager {
+    constructor(currentId=0){
         this._tasks = [];
-        this._currentId = 0;
+        this._currentId = currentId;
     } 
-    addTask(taskName, taskDate, status, assignTo, description){
+    addTask(name, description, assignedTo, dueDate, status){
         const newTask = {
-            id: this._currentId,
-            taskName: taskName,
-            taskDate: taskDate,
+            id: this._currentId++,
+            name: name,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
             status: status,
-            assignTo: assignTo,
-            description: description
         }
         this._tasks.push(newTask);
     }
-    get tasks(){
-        return this._tasks;
-    }
+    // get tasks(){
+    //     return this._tasks;
+    // }
 }
-const taskList = new TaskManager();
-taskList.addTask('Validation', '22/09/2021', 'in progress', 'Yuliia', 'Validate all the fields.');
-console.log(taskList);
