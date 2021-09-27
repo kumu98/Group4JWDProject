@@ -32,10 +32,9 @@ img{
 /* Style the tab */
 .tab {
   position: relative;
-    /* border: 1px solid #ccc; */
   background-color: rgb(72,71,139);
-    /* margin-left: 5px;   
-    margin-top: 5px; */
+  margin-left: 5px;   
+  margin-top: 5px;
 }
   
   /* Style the buttons that are used to open the tab content */
@@ -51,6 +50,7 @@ img{
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
+  /* margin: 5px; */
 }
   
   /* Change background color of buttons on hover */
@@ -65,13 +65,13 @@ img{
   
   /* Style the tab content */
 .tabcontent {
-  padding: 0px 12px;
-  /* border: 1px solid #ccc;
-  width: fit-content;
-  border-left: none;
+  margin: 10px;
+  /* padding: 0px 12px; */
   height: auto;
-  display: none;
-  float: left; */
+  float: left;
+
+  
+  
 }
 
 h5{

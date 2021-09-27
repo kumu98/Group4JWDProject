@@ -1,5 +1,5 @@
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
-let html = `<li class="card" style="min-width: 50vw">
+let html = `<li class="card" style="width: 25rem">
 <div class="card-body">
     <h5 class="card-title">${name}</h5>
     <p class="card-text">
@@ -40,7 +40,7 @@ class TaskManager {
             description: description,
             assignedTo: assignedTo,
             dueDate: dueDate,
-            status: status,
+            status: status
         };
         this._tasks.push(newTask);
     }
