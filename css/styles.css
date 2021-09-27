@@ -7,15 +7,15 @@ header{
 
 h1{
   text-align: center;
-  width: 100%;
+  /* width: 100%; */
 }
 
 body{
     margin:0 auto;
     background-color:rgb(191, 195, 199);
-    font-family:'rock salt', cursive;
-    width:100%;
-    min-height: 100vh;   
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    /* width:100%; */
+    /* min-height: 100vh;    */
 }
 
 
