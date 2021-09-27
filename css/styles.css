@@ -25,15 +25,15 @@ body{
   padding:0;
 }
 
-img{
-    width: 90px;
+header img{
+    max-width: 90px;
 }
 
 /* Style the tab */
 .tab {
   position: relative;
   background-color: rgb(72,71,139);
-  margin-left: 5px;   
+  /* margin-left: 5px;    */
   margin-top: 5px;
 }
   
@@ -65,8 +65,8 @@ img{
   
   /* Style the tab content */
 .tabcontent {
-  margin: 10px;
-  /* padding: 0px 12px; */
+  margin: 5px;
+  padding: 0px 12px;
   height: auto;
   float: left;
 

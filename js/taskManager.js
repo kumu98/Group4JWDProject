@@ -1,5 +1,5 @@
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
-let html = `<li class="card" style="width: 25rem">
+let html = `<li class="card d-flex" style="width: 18rem">
 <div class="card-body">
     <h5 class="card-title">${name}</h5>
     <p class="card-text">
@@ -8,7 +8,7 @@ let html = `<li class="card" style="width: 25rem">
     <p class="card-text">${assignedTo} </p>
     <p class="card-text">${dueDate}</p>
     <div class="card-footer row">
-        <div class="col-6">
+        <div class="col-5">
             <p class="card-text"><b>${status}</b></p>
         </div>
         <div class="col-3">
