@@ -23,12 +23,13 @@ const assignedErr = document.getElementById('assignedErr');
 const descriptionErr = document.getElementById('descriptionErr');
 const gridRadios = document.getElementsByName('gridRadios');
 const radioErr = document.getElementById('radioErr');
-
+let count = 0;
 
     let nameVal = taskName.value;
     if(nameVal.length < 5 || nameVal === ''){
         nameErr.innerHTML = 'Name should be at least 5 characters.';
         nameErr.style.color = 'red';
+        count++;
     }
     else{
         taskName.focus();
@@ -41,6 +42,7 @@ const radioErr = document.getElementById('radioErr');
     if(dueDate === ''){
         dateErr.innerHTML = 'Date could not be empty.';
         dateErr.style.color = 'red';
+        count++;
     }
     else{
         // dueDate.focus();
@@ -60,6 +62,7 @@ const radioErr = document.getElementById('radioErr');
     if(!radioValid){
         radioErr.innerHTML = 'Please select the status.'
         radioErr.style.color = 'red';
+        count++;
     }
 
 
@@ -68,6 +71,7 @@ const radioErr = document.getElementById('radioErr');
     if(assignTo === ''){
         assignedErr.innerHTML = 'Name should not be empty!';
         assignedErr.style.color = 'red';
+        count++;
     }
     else{
         // assignTo.focus();
@@ -79,26 +83,57 @@ const radioErr = document.getElementById('radioErr');
     if(description.value.length < 5 || description.value === null){
         descriptionErr.innerHTML = 'Please add some description.';
         descriptionErr.style.color = 'red';
-        
+        count++;
     }
     else{
         descriptionErr.innerHTML = '';
         
     }
 
-
-    taskList.addTask(
-        taskName.value,
-        description.value,
-        assign.value,
-        duedate.value,
-        radioInput
-    );
-
-    taskform.reset();
-
-    taskList.render();
+    if(count > 0){
+    count = 0;
+    return;
+    }
+    else{
+        taskList.addTask(
+            taskName.value,
+            description.value,
+            assign.value,
+            duedate.value,
+            radioInput
+        );
+    
+        taskform.reset();
+    
+        taskList.render();
+    }
+    
 });
 
 
+const taskName = document.getElementById('taskName');
+const duedate = document.getElementById('duedate');
+const assign = document.getElementById('assign');
+const description = document.getElementById('description');
+const cancelBtn = document.getElementById('cancelBtn');
+const gridRadios = document.getElementsByName('gridRadios');
+const nameErr = document.getElementById('nameErr');
+const dateErr = document.getElementById('dateErr');
+const assignedErr = document.getElementById('assignedErr');
+const descriptionErr = document.getElementById('descriptionErr');
+const radioErr = document.getElementById('radioErr');
+function cancelClick(){
+    nameErr.innerHTML = '';
+    dateErr.innerHTML = '';
+    assignedErr.innerHTML = '';
+    descriptionErr.innerHTML = '';
+    radioErr.innerHTML = '';
+    taskName.value = '';
+    duedate.value = '';
+    assign.value = '';
+    description.value = '';
+    gridRadios.checked = '';
+}
+cancelBtn.addEventListener('click', cancelClick);
+    
 
