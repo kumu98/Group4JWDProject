@@ -1,29 +1,25 @@
 function createTaskHtml (name, description, assignedTo, dueDate, status) {
-let html = `<li class="card d-flex" style="width: 18rem">
-<div class="card-body">
-    <h5 class="card-title">${name}</h5>
-    <p class="card-text">
-        ${description}
-    </p>
-    <p class="card-text">${assignedTo} </p>
-    <p class="card-text">${dueDate}</p>
-    <div class="card-footer row">
-        <div class="col-5">
-            <p class="card-text"><b>${status}</b></p>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-outline-success done-button">
-                Done
-            </button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-outline-danger delete-button">
-                Delete
-            </button>
-        </div>
-    </div>
-   </div>
-</li>`;
+let html = `<div class="card" style="width: 18rem">
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">
+                            ${description}
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item">${assignedTo} </li>
+                <li class="list-group-item">${dueDate} </li>
+                <li class="list-group-item">${status} </li>
+                </ul>
+                <div class="card-body text-right">
+                    <button class="btn btn-outline-success done-button">
+                        Done
+                    </button>
+                    <button class="btn btn-outline-danger delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>`;
 return html;
 }
 
@@ -47,7 +43,7 @@ class TaskManager {
 
    render() {
        let tasksHtmlList = [];
-       for (let i=0; i< this._tasks.length; i++){
+       for (let i=0; i < this._tasks.length; i++){
         let currentTask = this._tasks[i];
            let taskHtml = createTaskHtml (
                currentTask.name,
