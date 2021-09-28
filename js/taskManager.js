@@ -1,6 +1,6 @@
 
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
-    let html = `<div id=${id} class="card" style="width: 18rem">
+    let html = `<div class="card" data-task-id="${id}" style="width: 18rem">
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                     <p class="card-text">
@@ -24,13 +24,15 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
 return html;
 }
 
-
+//Create a Task Manager class
 class TaskManager {
     constructor(currentId=0){
         this._tasks = [];
         this._currentId = currentId;
     } 
+    
     addTask(name, description, assignedTo, dueDate, status){
+        //Create a newTask object 
         const newTask = {
             id: this._currentId++,
             name: name,
@@ -40,33 +42,49 @@ class TaskManager {
             status: status
         };
         this._tasks.push(newTask);
-        getTaskById(taskId){
 
-        }
     }
 
-   render() {
+    getTaskById(taskId){
+        let foundTask;
+        for(let i = 0; i < this._tasks.length; i++){
+            const task = this._tasks[i];
+            if(task.id === taskId){
+                foundTask = task;
+            }
+        }
+        return foundTask;
+    }
+    
+
+    render() {
        let tasksHtmlList = [];
        for (let i=0; i < this._tasks.length; i++){
-        let currentTask = this._tasks[i];
-           let taskHtml = createTaskHtml (
+        const currentTask = this._tasks[i];
+            const taskHtml = createTaskHtml (
                currentTask.id,
                currentTask.name,
                currentTask.description,
                currentTask.assignedTo,
                currentTask.dueDate,
                currentTask.status
-           )
+           );
+           
            tasksHtmlList.push(taskHtml);
        }
+
+    // Create the tasksHtml by joining each item in the tasksHtmlList
+    // with a new line in between each item.
+       const tasksHtml = tasksHtmlList.join("\n");
        
+    // Set the inner html of the tasksList on the page
+       const taskListContainer = document.getElementById('mycard');
        taskListContainer.innerHTML=tasksHtmlList;
 
-   } 
-
-      
+    } 
+   
 }
 
 
-          
+       
    
