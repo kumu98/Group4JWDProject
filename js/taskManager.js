@@ -1,5 +1,6 @@
-function createTaskHtml (name, description, assignedTo, dueDate, status) {
-let html = `<div class="card" style="width: 18rem">
+
+function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
+    let html = `<div id=${id} class="card" style="width: 18rem">
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                     <p class="card-text">
@@ -39,6 +40,9 @@ class TaskManager {
             status: status
         };
         this._tasks.push(newTask);
+        getTaskById(taskId){
+
+        }
     }
 
    render() {
@@ -46,6 +50,7 @@ class TaskManager {
        for (let i=0; i < this._tasks.length; i++){
         let currentTask = this._tasks[i];
            let taskHtml = createTaskHtml (
+               currentTask.id,
                currentTask.name,
                currentTask.description,
                currentTask.assignedTo,
@@ -54,8 +59,8 @@ class TaskManager {
            )
            tasksHtmlList.push(taskHtml);
        }
-       const mycard = document.getElementById('mycard');
-       mycard.innerHTML=tasksHtmlList;
+       
+       taskListContainer.innerHTML=tasksHtmlList;
 
    } 
 
