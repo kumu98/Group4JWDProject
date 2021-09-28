@@ -2,7 +2,7 @@ const taskList = new TaskManager();
 console.log(taskList._tasks);
 
 // Task 4 - Task Form Validation
-
+const taskListContainer = document.getElementById('mycard');
 const taskform = document.getElementById('taskform');
 
 taskform.addEventListener('submit', (e) => {
@@ -130,5 +130,26 @@ function cancelClick(){
     gridRadios.checked = '';
 }
 cancelBtn.addEventListener('click', cancelClick);
-    
 
+
+
+taskListContainer.addEventListener('click', (event) => { // "event" here is the event parameter
+    // console.log(event.target.classList);
+    if (event.target.classList.contains("done-button")) {
+        // Get the correct parent Task, yours might be slightly different
+        // Use console.log(event.target.parentElement) to see
+        console.log(event.target.parentElement.parentElement);
+        const parentTask =
+          event.target.parentElement.parentElement;
+        // Get the taskId of the parent Task and turn it into a number.
+        const taskId = Number(parentTask.dataset.id);
+        // Get the task from the TaskManager using the taskId
+        // const task = taskManager.getTaskById(taskId);
+        console.log(taskId);
+        // Update the task status to 'DONE'
+        // task.status = "Done";
+    
+        // Render the tasks
+    //     TaskManager.render();
+    }
+});
