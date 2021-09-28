@@ -40,9 +40,13 @@ class TaskManager {
             status: status
         };
         this._tasks.push(newTask);
-        getTaskById(taskId){
 
-        }
+
+        
+        //getTaskById(taskId){
+          //  let newTask = 0;
+
+        
     }
 
    render() {

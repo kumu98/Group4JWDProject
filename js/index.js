@@ -1,4 +1,4 @@
-const taskList = new TaskManager();
+const taskList = new taskManager();
 console.log(taskList._tasks);
 
 // Task 4 - Task Form Validation
@@ -149,7 +149,12 @@ taskListContainer.addEventListener('click', (event) => { // "event" here is the 
         // Update the task status to 'DONE'
         // task.status = "Done";
     
+
+        const task = taskManager.getTaskById(taskId);
+        // Update the task status to 'DONE'
+        task.status = "Done";
+        
         // Render the tasks
-    //     TaskManager.render();
+          taskManager.render();
     }
 });
