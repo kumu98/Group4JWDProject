@@ -1,7 +1,6 @@
 
 const taskList = new TaskManager(0); 
 console.log(taskList._tasks);
-// console.log(taskList.addTask('Yuliia', 'I try fix the problem', 'By Yuliia', '29/09/2021', 'Done'))
 
 const taskListContainer = document.getElementById('mycard');
 
@@ -64,7 +63,6 @@ if(!radioValid){
 }
 
 
-
 let assignTo = assign.value;
 if(assignTo === ''){
     assignedErr.innerHTML = 'Name should not be empty!';
@@ -72,7 +70,6 @@ if(assignTo === ''){
     count++;
 }
 else{
-    // assignTo.focus();
     assignedErr.innerHTML = '';
     
 }
@@ -102,7 +99,6 @@ else{
     );
 
     taskform.reset();
-
     taskList.render();
 }
     
@@ -135,24 +131,23 @@ function cancelClick(){
 cancelBtn.addEventListener('click', cancelClick);
 
 
-// Add an 'onclick' event listener to the Tasks List
-taskListContainer.addEventListener('click', (event) => { // "event" here is the event parameter
+taskListContainer.addEventListener('click', (event) => { 
     // console.log(event.target.classList);
     if (event.target.classList.contains("done-button")) {
-        // Get the correct parent Task, yours might be slightly different
         // console.log(event.target.parentElement.parentElement);
         const parentTask = event.target.parentElement.parentElement;
-        // Get the taskId of the parent Task and turn it into a number.
         const taskId = Number(parentTask.dataset.taskId);
         // console.log(parentTask.dataset);
         // console.log(parentTask.dataset.taskId);
-        // Get the task from the TaskManager using the taskId
-        
         const task = taskList.getTaskById(taskId);
-        // Update the task status to 'DONE'
         task.status = "Done";
         console.log(task);
-        // Render the tasks
         taskList.render();
-     }
+    }
+
 });
+
+
+
+
+    
