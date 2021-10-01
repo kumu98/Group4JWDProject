@@ -43,14 +43,6 @@ class TaskManager {
         };
         this._tasks.push(newTask);
 
-<<<<<<< HEAD
-
-        
-        //getTaskById(taskId){
-          //  let newTask = 0;
-
-        
-=======
     }
 
     getTaskById(taskId){
@@ -62,7 +54,6 @@ class TaskManager {
             }
         }
         return foundTask;
->>>>>>> 58c7e544778b1601444176c75ee91ac36735272e
     }
     
 
