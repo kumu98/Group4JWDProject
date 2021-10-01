@@ -4,7 +4,7 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
                 <div class="card-body">
                     <h5 class="card-title">${name}</h5>
                     <p class="card-text">
-                            ${description}
+                        ${description}
                     </p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -13,7 +13,7 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
                 <li class="list-group-item">${status} </li>
                 </ul>
                 <div class="card-body text-right">
-                    <button class="btn btn-outline-success done-button">
+                    <button class="btn btn-outline-success done-button ${status === "Done" ? "invisible" : "visible"}">
                         Done
                     </button>
                     <button class="btn btn-outline-danger delete-button">
@@ -24,7 +24,6 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
 return html;
 }
 
-//Create a Task Manager class
 class TaskManager {
     constructor(currentId=0){
         this._tasks = [];
@@ -32,7 +31,6 @@ class TaskManager {
     } 
     
     addTask(name, description, assignedTo, dueDate, status){
-        //Create a newTask object 
         const newTask = {
             id: this._currentId++,
             name: name,
@@ -55,8 +53,8 @@ class TaskManager {
         }
         return foundTask;
     }
-    
 
+    
     render() {
        let tasksHtmlList = [];
        for (let i=0; i < this._tasks.length; i++){
@@ -72,19 +70,9 @@ class TaskManager {
            
            tasksHtmlList.push(taskHtml);
        }
-
-    // Create the tasksHtml by joining each item in the tasksHtmlList
-    // with a new line in between each item.
        const tasksHtml = tasksHtmlList.join("\n");
        
-    // Set the inner html of the tasksList on the page
        const taskListContainer = document.getElementById('mycard');
-       taskListContainer.innerHTML=tasksHtmlList;
-
-    } 
-   
+       taskListContainer.innerHTML = tasksHtmlList;
+    }
 }
-
-
-       
-   
