@@ -1,4 +1,4 @@
-
+//Card function in html
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
     let html = `<div class="card" data-task-id="${id}" style="width: 18rem">
                 <div class="card-body">
