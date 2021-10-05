@@ -4,7 +4,6 @@ taskList.render();
 console.log(taskList._tasks);
 
 const taskListContainer = document.getElementById('mycard');
-
 const taskform = document.getElementById('taskform');
 
 taskform.addEventListener('submit', (e) => {
@@ -100,7 +99,6 @@ else{
 
     taskform.reset();
     taskList.save();
-
     taskList.render();
 }
     
