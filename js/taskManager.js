@@ -81,7 +81,6 @@ class TaskManager {
     }
     this._tasks = newTasks;
   }
-
   render() {
     let tasksHtmlList = [];
     for (let i = 0; i < this._tasks.length; i++) {
@@ -94,12 +93,14 @@ class TaskManager {
         currentTask.dueDate,
         currentTask.status
       );
-
+           
       tasksHtmlList.push(taskHtml);
     }
     const tasksHtml = tasksHtmlList.join("\n");
-
-    const taskListContainer = document.getElementById("mycard");
+       
+    const taskListContainer = document.getElementById('mycard');
     taskListContainer.innerHTML = tasksHtml;
   }
 }
+
+
