@@ -142,6 +142,7 @@ taskListContainer.addEventListener('click', (event) => {
         const task = taskList.getTaskById(taskId);
         task.status = "Done";
         console.log(task);
+        taskList.save();
         taskList.render();
     }
     if(event.target.classList.contains("delete-button")){
