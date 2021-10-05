@@ -1,10 +1,10 @@
-
-const taskList = new TaskManager(0); 
+const taskList = new TaskManager(0);
+taskList.load();
+taskList.render();
 console.log(taskList._tasks);
 
 const taskListContainer = document.getElementById('mycard');
 
-// Task 4 - Task Form Validation
 const taskform = document.getElementById('taskform');
 
 taskform.addEventListener('submit', (e) => {
@@ -99,6 +99,8 @@ else{
     );
 
     taskform.reset();
+    taskList.save();
+
     taskList.render();
 }
     
@@ -144,8 +146,18 @@ taskListContainer.addEventListener('click', (event) => {
         console.log(task);
         taskList.render();
     }
+    if(event.target.classList.contains("delete-button")){
+        const parentTask = event.target.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(parentTask);
+        taskList.deleteTask(taskId);
+        taskList.save();
+        taskList.render();
+    }
 
 });
+
+
 
 
 

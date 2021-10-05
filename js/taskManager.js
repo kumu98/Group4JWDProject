@@ -54,6 +54,32 @@ class TaskManager {
         return foundTask;
     }
 
+    save() {
+        let tasksJson = JSON.stringify(this._tasks);
+        localStorage.setItem("tasks", tasksJson);
+        let currentId = JSON.stringify(this._currentId);
+        localStorage.setItem ("currentId", currentId);
+    }
+
+    load(){
+       if(localStorage.getItem("tasks")){
+        this._tasks = JSON.parse(localStorage.getItem("tasks"));
+       }
+       if(localStorage.getItem("currentId")){
+        this._currentId = JSON.parse(localStorage.getItem("currentId"));
+       }
+    }
+
+    deleteTask(taskId){
+        let newTasks = [];
+        for(let i = 0; i < this._tasks.length; i++){
+            const task = this._tasks[i];
+            if(task.id !== taskId){
+               newTasks.push(task);
+            }
+        }
+        this._tasks = newTasks;
+    }
     
     render() {
        let tasksHtmlList = [];
@@ -73,6 +99,6 @@ class TaskManager {
        const tasksHtml = tasksHtmlList.join("\n");
        
        const taskListContainer = document.getElementById('mycard');
-       taskListContainer.innerHTML = tasksHtmlList;
+       taskListContainer.innerHTML = tasksHtml;
     }
 }
