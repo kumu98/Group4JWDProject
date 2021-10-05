@@ -94,7 +94,7 @@ class TaskManager {
                currentTask.status
            );
            
-           tasksHtmlList.push(taskHtml);
+        tasksHtmlList.push(taskHtml);
        }
        const tasksHtml = tasksHtmlList.join("\n");
        
