@@ -1,14 +1,21 @@
+// Initialize a new TaskManager with currentId set to 0
 const taskList = new TaskManager(0);
+
 taskList.load();
 taskList.render();
 console.log(taskList._tasks);
 
 const taskListContainer = document.getElementById('mycard');
+// Select the Task Form
 const taskform = document.getElementById('taskform');
 
+// Add an 'onsubmit' event listener
 taskform.addEventListener('submit', (e) => {
+
+// Prevent default action
     e.preventDefault();
 
+// Select the inputs
 const taskName = document.getElementById('taskName');
 const duedate = document.getElementById('duedate');
 const assign = document.getElementById('assign');
@@ -21,6 +28,7 @@ const gridRadios = document.getElementsByName('gridRadios');
 const radioErr = document.getElementById('radioErr');
 let count = 0;
 
+// Form validation for Task Name
 let nameVal = taskName.value;
 if(nameVal.length < 5 || nameVal === ''){
     nameErr.innerHTML = 'Name should be at least 5 characters!';
@@ -33,7 +41,7 @@ else{
   
 }
 
-
+// Form validation for Due Date
 let dueDate = duedate.value;
 if(dueDate === ''){
     dateErr.innerHTML = 'Date could not be empty!';
@@ -46,6 +54,7 @@ else{
     
 }
 
+// Form validation for Task Status
 let radioInput;
 radioValid = false;
 for(let i=0; i < gridRadios.length; i++){
@@ -61,7 +70,7 @@ if(!radioValid){
     count++;
 }
 
-
+// Form validation for Assigned Field
 let assignTo = assign.value;
 if(assignTo === ''){
     assignedErr.innerHTML = 'Name should not be empty!';
@@ -73,7 +82,7 @@ else{
     
 }
 
-
+// Form validation for Description
 if(description.value.length < 5 || description.value === null){
     descriptionErr.innerHTML = 'Please add some description!';
     descriptionErr.style.color = 'red';
@@ -84,11 +93,13 @@ else{
     
 }
 
+// Form validation for Full Form
 if(count > 0){
 count = 0;
 return;
 }
 else{
+    // Push the valid input into tasks array
     taskList.addTask(
         taskName.value,
         description.value,
@@ -134,7 +145,7 @@ cancelBtn.addEventListener('click', cancelClick);
 taskListContainer.addEventListener('click', (event) => { 
     // console.log(event.target.classList);
     if (event.target.classList.contains("done-button")) {
-        // console.log(event.target.parentElement.parentElement);
+        console.log(event.target.parentElement);
         const parentTask = event.target.parentElement.parentElement;
         const taskId = Number(parentTask.dataset.taskId);
         // console.log(parentTask.dataset);
@@ -153,9 +164,11 @@ taskListContainer.addEventListener('click', (event) => {
         taskList.save();
         taskList.render();
     }
-
+    
 });
 
+
+    
 
 
 
