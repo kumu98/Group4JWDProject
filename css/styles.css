@@ -13,10 +13,14 @@ h1{
 body{
     margin:0 auto;
     background-color:rgb(191, 195, 199);
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      background-image: url("todolist.jpg");
+      background-color: #cccccc;
+    }
+
     /* width:100%; */
     /* min-height: 100vh;    */
-}
+
 
 
 *{
