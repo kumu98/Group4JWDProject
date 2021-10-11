@@ -61,7 +61,7 @@ class TaskManager {
                currentTask.name,
                currentTask.description,
                currentTask.assignedTo,
-               currentTask.dueDate,
+               formattedDate,
                currentTask.status
            );
          
