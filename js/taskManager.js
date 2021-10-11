@@ -1,4 +1,3 @@
-
 function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
     let html = `<div class="card border-light mb-3" data-task-id="${id}" style="max-width:18rem;">
                     <div class="card-header fw-bold text-uppercase" style="color:#534aa8;">${name} </div>
@@ -16,13 +15,16 @@ function createTaskHtml (id, name, description, assignedTo, dueDate, status) {
 
 }
 
+// Create the TaskManager class
 class TaskManager {
   constructor(currentId = 0) {
     this._tasks = [];
     this._currentId = currentId;
   }
 
+   // Create the addTask method
   addTask(name, description, assignedTo, dueDate, status) {
+    // Create the newTask object
     const newTask = {
       id: this._currentId++,
       name: name,
@@ -31,18 +33,29 @@ class TaskManager {
       dueDate: dueDate,
       status: status,
     };
+    
+    // Push newTask to the list of tasks
     this._tasks.push(newTask);
   }
 
-
+  // Create the render method
     render() {
        let todoHtmlList = [];
        let inprogressHtmlList = [];
        let reviewHtmlList = [];
        let doneHtmlList = [];
 
+      // Loop over tasks and create the HTML which will storing in the array
        for (let i=0; i < this._tasks.length; i++){
+         
+          // Get the current task in the loop
             let currentTask = this._tasks[i];
+         
+         // Format the date
+        const date = new Date(currentTask.dueDate);
+        const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }; 
+        const formattedDate = date.toLocaleDateString('en-us', options);
+         
             const taskHtml = createTaskHtml (
                currentTask.id,
                currentTask.name,
@@ -51,25 +64,26 @@ class TaskManager {
                currentTask.dueDate,
                currentTask.status
            );
+         
+         //Push taskHtml to the respective category array
            
             if (currentTask.status === "To-Do") {
                 todoHtmlList.push(taskHtml);
-
-        
             }
             else if (currentTask.status === "In-Progress") {
                 inprogressHtmlList.push(taskHtml);
-
             }
             else if (currentTask.status === "Review"){
                 reviewHtmlList.push(taskHtml);
-
             }
             else if (currentTask.status === "Done"){
                 doneHtmlList.push(taskHtml);
-
             }
        }
+      
+      // Create the tasksHtml by joining each item in the List with new line between each item
+      // Set the inner HTML of the each category container on the page
+      
        const todoHTML = todoHtmlList.join("\n");
        const todolist = document.getElementById('todolist');
        todolist.innerHTML = todoHTML;
@@ -87,10 +101,7 @@ class TaskManager {
        donelist.innerHTML = doneHTML;
     
     }
-  
-
-
-    
+      
     save() {
         let tasksJson = JSON.stringify(this._tasks);
         localStorage.setItem("tasks", tasksJson);
@@ -131,4 +142,3 @@ class TaskManager {
         this._tasks = newTasks;
     }
 }
-

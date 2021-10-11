@@ -1,15 +1,20 @@
+// Initialize a new TaskManager 
 const taskList = new TaskManager();
+
 taskList.load();
 taskList.render();
 
-// console.log(taskList._tasks);
-
+// Select the Task Form
 const taskListContainer = document.getElementById('cardlist');
 const taskform = document.getElementById('taskform');
 
+// Add an 'onsubmit' event listener
 taskform.addEventListener('submit', (e) => {
+
+// Prevent default action
     e.preventDefault();
 
+  // Select the inputs
     const taskName = document.getElementById('taskName');
     const duedate = document.getElementById('duedate');
     const assign = document.getElementById('assign');
@@ -21,7 +26,8 @@ taskform.addEventListener('submit', (e) => {
     const gridRadios = document.getElementsByName('gridRadios');
     const radioErr = document.getElementById('radioErr');
     let count = 0;
-
+  
+// Form validation for Task Name
     let nameVal = taskName.value;
     if(nameVal.length < 5 || nameVal === ''){
         nameErr.innerHTML = 'Name should be at least 5 characters!';
@@ -34,7 +40,7 @@ taskform.addEventListener('submit', (e) => {
     
     }
 
-
+// Form validation for Due Date
     let dueDate = duedate.value;
     let varDate = new Date(dueDate);
     let today = new Date();
@@ -48,7 +54,8 @@ taskform.addEventListener('submit', (e) => {
         dateErr.innerHTML = '';
         
     }
-
+  
+  // Form validation for Task Status
     let radioInput;
     radioValid = false;
     for(let i=0; i < gridRadios.length; i++){
@@ -65,6 +72,7 @@ taskform.addEventListener('submit', (e) => {
     }
 
 
+// Form validation for Assigned Field
     let assignTo = assign.value;
     if(assignTo === ''){
         assignedErr.innerHTML = 'Name should not be empty!';
@@ -76,7 +84,7 @@ taskform.addEventListener('submit', (e) => {
         
     }
 
-
+// Form validation for Description
     if(description.value.length < 5 || description.value === null){
         descriptionErr.innerHTML = 'Please add some description!';
         descriptionErr.style.color = 'red';
@@ -87,10 +95,13 @@ taskform.addEventListener('submit', (e) => {
         
     }
 
+ // Form validation for Full Form
     if(count > 0){
     count = 0;
     return;
     }
+  
+  // Push the valid input into tasks array
     else{
         taskList.addTask(
             taskName.value,
@@ -101,7 +112,6 @@ taskform.addEventListener('submit', (e) => {
         );
 
         taskform.reset();
-       
         taskList.save();
         taskList.render();
     
@@ -140,7 +150,7 @@ cancelBtn.addEventListener('click', cancelClick);
 taskListContainer.addEventListener('click', (event) => { 
     
     if (event.target.classList.contains("done-button")) {
-        const parentTask = event.target.parentElement.parentElement;
+       const parentTask = event.target.parentElement.parentElement;
         const taskId = Number(parentTask.dataset.taskId);
         const task = taskList.getTaskById(taskId);
         task.status = "Done";
@@ -156,7 +166,5 @@ taskListContainer.addEventListener('click', (event) => {
         taskList.render();
         
     }
-
-
 
 });
