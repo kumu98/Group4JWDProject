@@ -28,17 +28,38 @@
       <!-- <button id="tasklink" class="tasklink">My Task </button> -->
     </div>
 
-    <div class="tabcontent">
+    
+    <div id="cardlist" class="container">
       <div class="row">
-        <div class="col">
-          <div id="mycard" class="row">
+        <div class="col-sm-3">
+          <h5 style="text-align:center;">To-Do</h5>
+          <div id="todolist" class="row">
+
+          </div>
+        </div> 
+        <div class="col-sm-3">
+          <h5 style="text-align:center;">In-Progress</h5>
+          <div id="inprogresslist" class="row">
+
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h5 style="text-align:center;">Review</h5>
+          <div id="reviewlist" class="row">
+
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <h5 style="text-align:center;">Done</h5>
+          <div id="donelist" class="row">
+
           </div>
         </div>
       </div>
-    </div>
+    </div>  
     
     
-    <div id="addtask" class="tabcontent d-flex">
+    <div id="addtask" class="d-flex">
       <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down">
           <div class="modal-content">
@@ -92,9 +113,9 @@
                     </div>
   
                     <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="Completed">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="Done">
                       <label class="form-check-label" for="gridRadios4">
-                        Completed
+                        Done
                       </label>
                     </div>
                   </div>
@@ -131,7 +152,7 @@
   <!-- Column layout ends here    -->
   
   <footer class="container">
-    <p>copyright group4.com</p>
+    <p>copyright group4 DKY.com</p>
   </footer>
 
 

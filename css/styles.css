@@ -33,7 +33,7 @@ header img{
 .tab {
   position: relative;
   background-color: rgb(72,71,139);
-  /* margin-left: 5px;    */
+  margin-left: 5px;   
   margin-top: 5px;
 }
   
@@ -63,16 +63,10 @@ header img{
   background-color: red;
 }
   
-  /* Style the tab content */
-.tabcontent {
-  margin: 5px;
-  padding: 0px 12px;
-  height: auto;
-  float: left;
-
-  
-  
+.card{
+  background-color: beige;
 }
+
 
 h5{
   color:tomato;
@@ -82,8 +76,23 @@ footer{
   text-align: center;
 }
 
-.card{
-  background-color: lightgrey;
+#todolist .card-header{
+  background-color:rgba(255, 0, 0, 0.699);
 }
+
+#inprogresslist .card-header{
+  background-color:darkorange;
+}
+
+#reviewlist .card-header{
+  background-color:gold;
+}
+
+#donelist .card-header{
+  background-color:greenyellow;
+}
+
+
+
   
   
