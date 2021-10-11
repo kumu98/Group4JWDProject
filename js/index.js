@@ -1,6 +1,7 @@
 const taskList = new TaskManager();
 taskList.load();
 taskList.render();
+
 // console.log(taskList._tasks);
 
 const taskListContainer = document.getElementById('cardlist');
@@ -106,32 +107,33 @@ taskform.addEventListener('submit', (e) => {
     
     }
     
+
 });
 
-
-const taskName = document.getElementById('taskName');
-const duedate = document.getElementById('duedate');
-const assign = document.getElementById('assign');
-const description = document.getElementById('description');
-const cancelBtn = document.getElementById('cancelBtn');
-const gridRadios = document.getElementsByName('gridRadios');
-const nameErr = document.getElementById('nameErr');
-const dateErr = document.getElementById('dateErr');
-const assignedErr = document.getElementById('assignedErr');
-const descriptionErr = document.getElementById('descriptionErr');
-const radioErr = document.getElementById('radioErr');
-function cancelClick(){
-    nameErr.innerHTML = '';
-    dateErr.innerHTML = '';
-    assignedErr.innerHTML = '';
-    descriptionErr.innerHTML = '';
-    radioErr.innerHTML = '';
-    taskName.value = '';
-    duedate.value = '';
-    assign.value = '';
-    description.value = '';
-    gridRadios.checked = '';
+const taskName = document.getElementById("taskName");
+const duedate = document.getElementById("duedate");
+const assign = document.getElementById("assign");
+const description = document.getElementById("description");
+const cancelBtn = document.getElementById("cancelBtn");
+const gridRadios = document.getElementsByName("gridRadios");
+const nameErr = document.getElementById("nameErr");
+const dateErr = document.getElementById("dateErr");
+const assignedErr = document.getElementById("assignedErr");
+const descriptionErr = document.getElementById("descriptionErr");
+const radioErr = document.getElementById("radioErr");
+function cancelClick() {
+  nameErr.innerHTML = "";
+  dateErr.innerHTML = "";
+  assignedErr.innerHTML = "";
+  descriptionErr.innerHTML = "";
+  radioErr.innerHTML = "";
+  taskName.value = "";
+  duedate.value = "";
+  assign.value = "";
+  description.value = "";
+  gridRadios.checked = "";
 }
+
 cancelBtn.addEventListener('click', cancelClick);
 
 
@@ -155,11 +157,6 @@ taskListContainer.addEventListener('click', (event) => {
         
     }
 
+
+
 });
-
-
-
-
-
-
-    
