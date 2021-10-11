@@ -86,7 +86,7 @@ class TaskManager {
        const donelist = document.getElementById('donelist');
        donelist.innerHTML = doneHTML;
     
-
+    }
   
 
 
