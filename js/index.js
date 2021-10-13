@@ -1,8 +1,8 @@
 // Initialize a new TaskManager 
 const taskList = new TaskManager();
-
 taskList.load();
 taskList.render();
+console.log(taskList._tasks);
 
 // Select the Task Form
 const taskListContainer = document.getElementById('cardlist');
