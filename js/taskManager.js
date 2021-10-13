@@ -22,7 +22,7 @@ class TaskManager {
     this._currentId = currentId;
   }
 
-   // Create the addTask method
+  // Create the addTask method
   addTask(name, description, assignedTo, dueDate, status) {
     // Create the newTask object
     const newTask = {
@@ -34,80 +34,80 @@ class TaskManager {
       status: status,
     };
     
-    // Push newTask to the list of tasks
-    this._tasks.push(newTask);
+  // Push newTask to the list of tasks
+  this._tasks.push(newTask);
   }
 
   // Create the render method
-    render() {
-       let todoHtmlList = [];
-       let inprogressHtmlList = [];
-       let reviewHtmlList = [];
-       let doneHtmlList = [];
+  render() {
+    let todoHtmlList = [];
+    let inprogressHtmlList = [];
+    let reviewHtmlList = [];
+    let doneHtmlList = [];
 
-      // Loop over tasks and create the HTML which will storing in the array
-       for (let i=0; i < this._tasks.length; i++){
-         
-          // Get the current task in the loop
-            let currentTask = this._tasks[i];
-         
-         // Format the date
-        const date = new Date(currentTask.dueDate);
-        const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }; 
-        const formattedDate = date.toLocaleDateString('en-us', options);
-         
-            const taskHtml = createTaskHtml (
-               currentTask.id,
-               currentTask.name,
-               currentTask.description,
-               currentTask.assignedTo,
-               formattedDate,
-               currentTask.status
-           );
-         
-         //Push taskHtml to the respective category array
-           
-            if (currentTask.status === "To-Do") {
-                todoHtmlList.push(taskHtml);
-            }
-            else if (currentTask.status === "In-Progress") {
-                inprogressHtmlList.push(taskHtml);
-            }
-            else if (currentTask.status === "Review"){
-                reviewHtmlList.push(taskHtml);
-            }
-            else if (currentTask.status === "Done"){
-                doneHtmlList.push(taskHtml);
-            }
-       }
+    // Loop over tasks and create the HTML which will storing in the array
+    for (let i=0; i < this._tasks.length; i++){
       
-      // Create the tasksHtml by joining each item in the List with new line between each item
-      // Set the inner HTML of the each category container on the page
+      // Get the current task in the loop
+        let currentTask = this._tasks[i];
       
-       const todoHTML = todoHtmlList.join("\n");
-       const todolist = document.getElementById('todolist');
-       todolist.innerHTML = todoHTML;
-       
-       const inprogressHTML = inprogressHtmlList.join("\n");
-       const inprogresslist = document.getElementById('inprogresslist');
-       inprogresslist.innerHTML = inprogressHTML;
-       
-       const reviewHTML = reviewHtmlList.join("\n");
-       const reviewlist = document.getElementById('reviewlist');
-       reviewlist.innerHTML = reviewHTML;
-       
-       const doneHTML = doneHtmlList.join("\n");
-       const donelist = document.getElementById('donelist');
-       donelist.innerHTML = doneHTML;
+      // Format the date
+      const date = new Date(currentTask.dueDate);
+      const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' }; 
+      const formattedDate = date.toLocaleDateString('en-us', options);
+        
+      const taskHtml = createTaskHtml (
+          currentTask.id,
+          currentTask.name,
+          currentTask.description,
+          currentTask.assignedTo,
+          formattedDate,
+          currentTask.status
+      );
+        
+      //Push taskHtml to the respective category array
+        
+      if (currentTask.status === "To-Do") {
+          todoHtmlList.push(taskHtml);
+      }
+      else if (currentTask.status === "In-Progress") {
+          inprogressHtmlList.push(taskHtml);
+      }
+      else if (currentTask.status === "Review"){
+          reviewHtmlList.push(taskHtml);
+      }
+      else if (currentTask.status === "Done"){
+          doneHtmlList.push(taskHtml);
+      }
+    }
     
-    }
+    // Create the tasksHtml by joining each item in the List with new line between each item
+    // Set the inner HTML of the each category container on the page
+    
+    const todoHTML = todoHtmlList.join("\n");
+    const todolist = document.getElementById('todolist');
+    todolist.innerHTML = todoHTML;
+    
+    const inprogressHTML = inprogressHtmlList.join("\n");
+    const inprogresslist = document.getElementById('inprogresslist');
+    inprogresslist.innerHTML = inprogressHTML;
+    
+    const reviewHTML = reviewHtmlList.join("\n");
+    const reviewlist = document.getElementById('reviewlist');
+    reviewlist.innerHTML = reviewHTML;
+    
+    const doneHTML = doneHtmlList.join("\n");
+    const donelist = document.getElementById('donelist');
+    donelist.innerHTML = doneHTML;
+  
+  }
       
-    save() {
-        let tasksJson = JSON.stringify(this._tasks);
-        localStorage.setItem("tasks", tasksJson);
-        let currentId = JSON.stringify(this._currentId);
-        localStorage.setItem ("currentId", currentId);
-    }
+  save() {
+      let tasksJson = JSON.stringify(this._tasks);
+      localStorage.setItem("tasks", tasksJson);
+      let currentId = JSON.stringify(this._currentId);
+      localStorage.setItem ("currentId", currentId);
+  }
 
 
   load() {
@@ -120,25 +120,25 @@ class TaskManager {
   }
 
 
-    getTaskById(taskId){
-        let foundTask;
-        for(let i = 0; i < this._tasks.length; i++){
-            const task = this._tasks[i];
-            if(task.id === taskId){
-                foundTask = task;
-            }
-        }
-        return foundTask;
-    }
+  getTaskById(taskId){
+      let foundTask;
+      for(let i = 0; i < this._tasks.length; i++){
+          const task = this._tasks[i];
+          if(task.id === taskId){
+              foundTask = task;
+          }
+      }
+      return foundTask;
+  }
 
-    deleteTask(taskId){
-        let newTasks = [];
-        for(let i = 0; i < this._tasks.length; i++){
-            const task = this._tasks[i];
-            if(task.id !== taskId){
-               newTasks.push(task);
-            }
-        }
-        this._tasks = newTasks;
-    }
+  deleteTask(taskId){
+      let newTasks = [];
+      for(let i = 0; i < this._tasks.length; i++){
+          const task = this._tasks[i];
+          if(task.id !== taskId){
+              newTasks.push(task);
+          }
+      }
+      this._tasks = newTasks;
+  }
 }
