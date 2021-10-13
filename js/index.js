@@ -11,7 +11,7 @@ const taskform = document.getElementById('taskform');
 // Add an 'onsubmit' event listener
 taskform.addEventListener('submit', (e) => {
 
-// Prevent default action
+  // Prevent default action
     e.preventDefault();
 
   // Select the inputs
@@ -71,8 +71,7 @@ taskform.addEventListener('submit', (e) => {
         count++;
     }
 
-
-// Form validation for Assigned Field
+   // Form validation for Assigned Field
     let assignTo = assign.value;
     if(assignTo === ''){
         assignedErr.innerHTML = 'Name should not be empty!';
@@ -84,7 +83,7 @@ taskform.addEventListener('submit', (e) => {
         
     }
 
-// Form validation for Description
+   // Form validation for Description
     if(description.value.length < 5 || description.value === null){
         descriptionErr.innerHTML = 'Please add some description!';
         descriptionErr.style.color = 'red';
@@ -95,7 +94,7 @@ taskform.addEventListener('submit', (e) => {
         
     }
 
- // Form validation for Full Form
+  // Form validation for Full Form
     if(count > 0){
     count = 0;
     return;
@@ -116,8 +115,6 @@ taskform.addEventListener('submit', (e) => {
         taskList.render();
     
     }
-    
-
 });
 
 const taskName = document.getElementById("taskName");
