@@ -122,7 +122,8 @@ const duedate = document.getElementById("duedate");
 const assign = document.getElementById("assign");
 const description = document.getElementById("description");
 const cancelBtn = document.getElementById("cancelBtn");
-const gridRadios = document.getElementsByName("gridRadios");
+const defaultRadio = document.getElementsByName("default");
+const gridRadios = document.getElementsByName("gridRadios")
 const nameErr = document.getElementById("nameErr");
 const dateErr = document.getElementById("dateErr");
 const assignedErr = document.getElementById("assignedErr");
@@ -138,7 +139,10 @@ function cancelClick() {
   duedate.value = "";
   assign.value = "";
   description.value = "";
-  gridRadios.checked = "";
+  for(let i=0;i<gridRadios.length;i++){
+      gridRadios[i].checked = false;
+  }
+
 }
 
 cancelBtn.addEventListener('click', cancelClick);
